@@ -1,0 +1,33 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>PNG</title>
+  <script src="main.js"></script>
+</head>
+<script type="text/javascript" src="elm.js"></script>
+<style> 
+	canvas {
+		outline: 1px solid black;
+	}
+</style>
+<canvas></canvas>
+<script>
+	canvas = document.querySelector("canvas");
+	ctx = canvas.getContext("2d");
+</script>
+<body>
+  <div id="myapp"></div>
+  <script>
+	canvas = document.querySelector("canvas");
+	ctx = canvas.getContext("2d");
+  var app = Elm.Main.init({
+    node: document.getElementById('myapp')
+    });
+	app.ports.color.subscribe(function (message){
+		//ctx.fillStyle = message
+		ctx.rectFill(20,20,150,100);
+	});
+  
+  </script>
+</body>
+</html>
